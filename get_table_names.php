@@ -9,7 +9,7 @@ $roadNumber = $_GET['roadNumber'];
 
 
 function directory_check($district, $roadName,$roadNumber){
-    $directory = 'C:\MAMP\htdocs\Roadsnew\\data\\'.$district.'\\';
+    $directory = 'data/'.$district.'/';
     $files = scandir($directory);
     try{
         
@@ -32,13 +32,13 @@ function directory_check($district, $roadName,$roadNumber){
 
 
 function directory_check1($district, $roadName, $roadNumber) {
-    $directory = 'C:\MAMP\htdocs\Roadsnew\data\\' . $district . '\\';
+    $directory = 'data/' . $district . '/';
     $files = scandir($directory);
     try {
         ///echo json_encode(['success' => 'test', 'roadNumber' => $roadNumber]);
         
         foreach ($files as $file) {
-            $path = $directory . '\\' . $file;
+            $path = $directory . '/' . $file;
             if (strpos($file, $roadName) !== false || strpos(' '.$file, $roadNumber) !== false) {
                 ///echo json_encode(['success' => false, 'error' => $path]);
                 return getTableNames($district, $file);
@@ -53,7 +53,7 @@ function directory_check1($district, $roadName, $roadNumber) {
 
 function getTableNames($district,$name) {
     try{
-    $folderPath = 'C:\MAMP\htdocs\Roadsnew\\data\\'.$district.'\\'.$name;
+    $folderPath = 'data/'.$district.'/'.$name;
     ///$folderPath = $name;
         $tableNames = [];
         $files = scandir($folderPath);

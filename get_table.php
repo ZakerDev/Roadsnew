@@ -12,7 +12,7 @@ $selectedOption = $_GET['selectedOption'];
 try{
 if (!empty($district) && !empty($val1) && !empty($selectedOption)) {
     
-    $filePath = 'C:\MAMP\htdocs\Roadsnew\\data\\' . $district . '\\' . str_replace('–', '-', $val1) . '\\' . $selectedOption; 
+    $filePath = 'data/' . $district . '/' . str_replace('–', '-', $val1) . '/' . $selectedOption; 
     try{
         if (file_exists($filePath)) {
             
