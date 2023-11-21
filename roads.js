@@ -720,7 +720,8 @@ function making_map(district,csv,kml,myMap){
                                         },
                                         error: function (jqXHR, textStatus, errorThrown) {
                                             console.log(val[2]);
-                                            console.error('Не удалось загрузить наименования таблиц.'+district+ ' \\'+ district+ '\\' + val[1]);
+                                            console.error('Не удалось загрузить наименования таблиц.'+' \\'+ district+ '\\' + val[1]);
+                                            console.error('Не удалось загрузить наименования таблиц.'+' \\'+ district+ '\\' + val[2]);
                                             console.error('Не удалось загрузить наименования таблиц. ' + textStatus + ': ' + errorThrown);
                                             console.error(errorThrown);
                                             console.error(jqXHR);
